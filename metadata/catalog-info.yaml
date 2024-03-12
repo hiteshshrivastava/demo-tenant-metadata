@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: llll
+  tags:
+    - azure
+    - demo
+    - datalake
+  description: This is resource provider llll for azure cloud
+spec:
+  type: resourceprovidertype
+  system: Demo
+  lifecycle: experimental
+  owner: Demo
