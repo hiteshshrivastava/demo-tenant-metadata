@@ -11,4 +11,4 @@ spec:
   type: resourceprovidertype
   system: Demo
   lifecycle: experimental
-  owner: group:demo
+  owner: demo
