@@ -1,14 +1,57 @@
+
+---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: llll
+  name: azurewest
+  tags:
+    - azure
+    - hod
+    - provider
+  description: This is resource provider for azure
+  annotations:
+    github.com/project-slug: 'https://github.com/hiteshshrivastava/demo-tenant-metadata'
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: resource_provider
+  system: DEMO
+  lifecycle: experimental
+  owner: DEMO
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: demoazuretenant
   tags:
     - azure
     - demo
-    - datalake
-  description: This is resource provider llll for azure cloud
+    - tenant
+  description: This is tenant 'demoazuretenant'' resource provider 'azurewest'
+  annotations:
+    github.com/project-slug: 'https://github.com/hiteshshrivastava/demo-tenant-metadata'
+    backstage.io/techdocs-ref: dir:.
 spec:
-  type: resourceprovidertype
-  system: Demo
+  type: tenant
+  system: DEMO
   lifecycle: experimental
-  owner: group:demo
+  owner: DEMO
+  dependsOn: azurewest
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: demoazureresourcevault
+  tags:
+    - azure
+    - demo
+    - key vault
+  description: This is 'demoazureresourcevault' of type 'key vault' tenant 'demoazuretenant' resource provider 'azurewest'
+  annotations:
+    github.com/project-slug: 'https://github.com/hiteshshrivastava/demo-tenant-metadata'
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: resource_entity
+  system: DEMO
+  lifecycle: experimental
+  owner: DEMO
+  dependsOn: demoazuretenant
