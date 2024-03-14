@@ -35,7 +35,7 @@ spec:
   system: DEMO
   lifecycle: experimental
   owner: DEMO
-  dependsOn: azurewest
+  dependsOn: [azurewest]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -54,4 +54,4 @@ spec:
   system: DEMO
   lifecycle: experimental
   owner: DEMO
-  dependsOn: demoazuretenant
+  dependsOn: [demoazuretenant]
