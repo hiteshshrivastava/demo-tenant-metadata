@@ -44,7 +44,7 @@ metadata:
   tags:
     - azure
     - demo
-    - key_vault
+    - key-vault
   description: This is 'demoazureresourcevault' of type 'key vault' tenant 'demoazuretenant' resource provider 'azurewest'
   annotations:
     github.com/project-slug: 'https://github.com/hiteshshrivastava/demo-tenant-metadata'
