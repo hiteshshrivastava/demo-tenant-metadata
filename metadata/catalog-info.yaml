@@ -3,7 +3,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: azurewest
+  name: westazure
   tags:
     - azure
     - hod
@@ -21,12 +21,12 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: demoazuretenant
+  name: demotenant
   tags:
     - azure
     - demo
     - tenant
-  description: This is tenant 'demoazuretenant'' resource provider 'azurewest'
+  description: This is tenant 'demotenant'' resource provider 'westazure'
   annotations:
     github.com/project-slug: 'https://github.com/hiteshshrivastava/demo-tenant-metadata'
     backstage.io/techdocs-ref: dir:.
@@ -35,17 +35,17 @@ spec:
   system: DEMO
   lifecycle: experimental
   owner: DEMO
-  dependsOn: [component:azurewest]
+  dependsOn: [component:westazure]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: demoazureresourcevault
+  name: tenantdemo
   tags:
     - azure
     - demo
-    - key-vault
-  description: This is 'demoazureresourcevault' of type 'key vault' tenant 'demoazuretenant' resource provider 'azurewest'
+    - compute
+  description: This is 'tenantdemo' of type 'compute' tenant 'demotenant' resource provider 'westazure'
   annotations:
     github.com/project-slug: 'https://github.com/hiteshshrivastava/demo-tenant-metadata'
     backstage.io/techdocs-ref: dir:.
@@ -54,4 +54,4 @@ spec:
   system: DEMO
   lifecycle: experimental
   owner: DEMO
-  dependsOn: [component:demoazuretenant]
+  dependsOn: [component:demotenant]
